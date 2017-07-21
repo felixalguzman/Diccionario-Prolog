@@ -11,6 +11,7 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -61,6 +62,8 @@ public class PruebaProlog {
     
         try (BufferedReader br = new BufferedReader(new FileReader(txtFile))) {
             
+            PrintWriter writer = new PrintWriter(plFile);
+            
             BufferedWriter wr = new BufferedWriter(new FileWriter(plFile));
             String line = ""; 
             String word = ""; String definition = "";
@@ -75,7 +78,8 @@ public class PruebaProlog {
                     word = paragraph.get(0).split(" ")[0];
                     paragraph.remove(0);
                     definition = paragraph.toString();
-                    
+                    writer.append("means(" + word.substring(0, word.length()-1) + 
+                                        ", " + definition + ").");
                     wr.write("means(" + word.substring(0, word.length()-1) + 
                                         ", " + definition + ").");
                     System.out.println("means(" + word.substring(0, word.length()-1) + 
@@ -84,6 +88,8 @@ public class PruebaProlog {
                     paragraph.clear();
                 }
             }
+            writer.println();
+            writer.close();
         } 
         catch (IOException ex) {
             Logger.getLogger(PruebaProlog.class.getName()).log(Level.SEVERE, null, ex);

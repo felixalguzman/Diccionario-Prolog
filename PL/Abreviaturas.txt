@@ -2,129 +2,1140 @@
 ABREVIATURAS EMPLEADAS EN ESTE DICCIONARIO 
 
 
+adj .uljctivo.
+aUv adverbio.
+adv. afirní adverbio de afirmación.
+adv. , ... adverbio de cantidad.
+adv. 1 ... adverbio de hi jar. adv. m adverbio d<» modo.
+adv. neg adverbio de negación.
 
 ;i . vcrho activa. 
+
 abl .iblativo. 
+
 aco|i., yccii iccpciún,' acepciones. 
+
 acns. cusativo. 
+
 adj .uljctivo. 
+
 aUv adverbio. 
+
 adv. afirní adverbio de afirmación. 
+
 adv. , ... adverbio de cantidad. 
+
 adv. 1 ... adverbio de hi jar. 
+
 adv. m adverbio d&lt;» modo. 
+
 adv. neg adverbio de negación. 
+
 adv. t adverbio de tiempo. 
+
 Agr Agricultura. 
+
 Agrim Agrimensura. 
+
 al alemán. 
+
 Aibac Albacete. 
+
 Alian AliaiUleria. 
+
 jí!:i Álgebra. 
+
 Alie .Alicante. 
+
 Alni Almería. 
+
 al. niod &lt; alpm.in moderno. 
+
 Ahí .-¡¡{¡uiiiiia, 
+
 amb .imb¡¡;uo. 
+
 Amir América. 
+
 Amer. AferiJ. América Afer¡&lt;lional. 
+
 AhíI Anilülifcta. 
+
 ant anticuado o anticuada. 
+
 A"t. Antilloí. 
+
 ant. al antigno alemán. 
+
 ant. fr anti)&gt;uo francís. 
+
 . , . , t Aplicado a per.sona , úsase 
+
 Api. a pers., ii. t. c. s ' *^ ' ' 
+
 I como substantivo. 
+
 4r árabe. 
+
 Ar Aragón. 
+
 are arcaico « arcaica. 
+
 Aril Aritmética. 
+
 Arq Arquitectura. 
+
 Arqueol. . . Arqueología. 
+
 art .irticulo. 
+
 Att. .. . . .Artillería. 
+
 Ast . Asturias. 
+
 Aitrot . Istrología. 
+
 Astron ... .Astronomía. 
+
 aum . aumentativo. 
+
 .iv Ávila. 
+
 Bad fíadajot. 
+
 b. bret bajo bretón. 
+
 berb. e berber berberisco. 
+
 b. gr bajo griego. 
+
 Diblitgr. Bibliogra/ia. 
+
 Blas Blasón. 
+
 b. lat bajo latín. 
+
 Bot. Bolámea, 
+
 Burg Sirgos. 
+
 Caligr Calif¡raf¡a. 
+
 Can Canarias. 
+
 Cant Cantería. 
+
 Carp ! arpinteria. 
+
 cat 1 jtuün. 
+
 Calóf. o Cuttiflr LaiJ/'lrica, 
+
 CÜt céltico. 
 
+
+
 también 
+
+
+
 Cetr Cetrería. 
+
 Cir Cirugía. 
+
 colect colectivo. 
+
 Colom. o Colomb Colombia. 
+
 com común do dos. 
+
 Com Comercio. 
+
 comp comparativo. 
+
 conj conjunción. 
+
 conj. advers conjunción adversativa. 
+
 conj. comp conjunción comparativa. 
+
 conj. condic conjunción condicionaL 
+
 conj. copulat.. conjunción copulativa. 
+
 conj. distrib conjunción distributiva. 
+
 conj. disyunt conjunción disyuntiva. 
+
 conj. ilat .... conjunción ilativa. 
+
 Contracc Contracción. 
+
 Córd. Córdoba. 
+
 corrup corrupción. 
+
 Cronol Cronología. 
+
 d. diminutivo. 
+
 dat dativo. 
+
 defect verbo defectivo. 
+
 der derivado. 
+
 despect despectivo » despcctivx 
+
 desús desusado o dcsu.&lt;iada. 
+
 Dial. Dialéctica. 
+
 Diip. o Diiptr Diéptrica. 
+
 Ecuad Ecuador. 
+
 Equil Equitación. 
+
 Esc .... Escultura. 
+
 escand. . . escandinavo. 
+
 Esgr Esgrima. 
+
 Estát. Estática. 
+
 exclam exclamación. 
+
 explet expletivo o expletiva. 
+
 expr expresión. 
+
 expr. elijt expresión elíptica. 
+
 Extr Extremadura. 
+
 f substantivo femenino. 
+
 fam familiar, 
+
 Farm Farmacia. 
+
 fcst festivo t festiva. 
+
 fij. . . figurado o fijjurada. 
+
 FU . . Filosofía. 
+
 Filip Filipinas. 
+
 Fis Física. 
+
 Fisiol Fisiologi*. 
+
 flam flamenco. 
+
 For Forense. 
+
 Fort. FortiJicaeL^'t. 
+
 Ffttgr Fotografió. 
+
 ir francés. 
+
 fr., fn frase, frases. 
+
 frec * frecuent verbo frecuentativo. 
+
 fr. proverb frase proverbial. 
+
 fut futuro. 
+
 gaéL gaéiico. 
+
 Rail gallego. 
+
 gen. ^¡éncra 
+
 genit genitivo. 
+
 Getd GoodttU, 
+
+
+
+XVIII 
+
+
+
+Ci»y 1 
+
+
+Cecgrt/ia. 
+
+
+Gii&gt;: 
+
+
+C,r,^'&lt;&gt;¡;U, 
+
+
+Ctom 
+
+
+li' iiitlría. 
+
+
+gpr.. 
+
+
+.:idio. 
+
+
+gcrní 
+
+
+i.ínico. 
+
+
+Germ 
+
+
+■ ';;.;/.';.;. 
+
+
+Gntm 
+
+
+, rn'ntJnUii, 
+
+
+^ 
+
+
+hético. 
+
+
+F- 
+
+
+^•nego. 
+
+
+gr. rood. . 
+
+
+friego moderno. 
+
+
+Gram 
+
+
+. . Gfmátita, 
+
+
+Gnm. 
+
+
+. . . Grattada. 
+
+
+hebr 
+
+
+hebreo. 
+
+
+/riJrául. . 
+
+
+iliáráuUca, 
+
+
+HiJrem . 
+
+
+llidromítHa. 
+
+
+H'g- 
+
+
+Higitni. 
+
+
+Hia. S'at... 
+
+
+Historia Xaturiil. 
+
+
+bol 
+
+
+Iiolandés. 
+
+
+ímpcr. o impci.i' 
+
+
+imperativo. 
+
+
+impers 
+
+
+verbo impcrson^il. 
+
+
+Impr 
+
+
+• • imprenta. 
+
+
+incoat. ... 
+
+
+verbo incoativo. 
+
+
+indct 
+
+
+indeterminado. 
+
+
+
+
+indicativo. 
+
+
+infini! 
+
+
+inñnitivo. 
+
+
+ingl 
+
+
+■ • inglés. 
+
+
+inlens ■ 
+
+
+intensivo. 
+
+
+intcrj 
+
+
+interjección. 
+
+
+
+
+
+
+
+
+irónico irónica. 
+
+
+irrcv. 
+
+
+irregular. 
+
+
+ital.. 
+
+
+italiano. 
+
+
+itcr.v 
+
+
+iterativo. 
+
+
+TifWi/ 
+
+
+Ju ritpruitencia. 
+
+
+lat 
+
+
+l.itin o latina. 
+
+
+ht mod. . . 
+
+
+l.-itin moderno. 
+
+
+Llng.... 
+
+
+Lin^islUa. 
+
+
+Lit 
+
+
+Literalmente. 
+
+
+íoc 
+
+
+locución. 
+
+
+Lig. 
+
+
+Ugica. 
+
+
+m 
+
+
+substantivo ma.&lt;iCiiIino. 
+
+
+
+
+substantivos masculino y femenino. 
+
+
+m. adv., ni.s. nu. 
+
+
+modo adverbial, modos adverbiales. 
+
+
+Muí 
+
+
+Málaga. 
+
+
+Ma, 
+
+
+.Miirina. 
+
+
+Mal 
+
+
+Mattmátúas. 
+
+
+m. conjunt. cuiiiiic . . . . 
+
+
+■ ■ . modo conjuntivo condidcnal. 
+
+
+Mtt. 
+
+
+. . . Mecánica. 
+
+
+Mid 
+
+
+Mediana. 
+
+
+Mi) 
+
+
+Méjiea. 
+
+
+mejic 
+
+
+mejicano. 
+
+
+Milal. 
+
+
+yfítaluf^_ÍA. 
+
+
+If eU|&gt;l . . 
+
+
+:no. 
+
+
+lletát 
+
+
+M -.a;...í. 
+
+
+MHt»r. . . 
+
+
+Meieertlofia, 
+
+
+Milr 
+
+
+Mitrica. 
+
+
+Mü 
+
+
+Mitieia. 
+
+
+Mm 
+
+
+Minrria. 
+
+
+MiHirai 
+
+
+.'.f-nrralagia. 
+
+
+Mil 
+
+
+M:!..\^.;,a. 
+
+
+Mtnl 
+
+
+.\'.'nf rja. 
+
+
+Mor. 
+
+
+Murcia, 
+
+
+Mu&lt; 
+
+
+Mújiea. 
+
+
+
+
+verbo neutro* 
+
+
+A'a. 
+
+
+/fawtm. 
+
+
+netti 
+
+
+Decrindés. 
+
+
+»&lt;^ 
+
+
+nettadte. 
+
+
+Bcjr»f 
+
+
+nr,, .;■..! f negativa. 
+
+
+Dominm 
+
+
+norun^tivo. 
+
+
+«•^ 
+
+
+■ooibre propio. 
+
+
+uto) , núiiK 
+
+
+aikmero, núaero*. 
+
+
+A'umltm ■ 
+
+
+SmmtiMiitíM. 
+
+
+Oil 
+
+
+OtettlrUn, 
+
+
+Or!. 
+
+
+Orttgnpa. 
+
+
+P 
+
+
+pMtic^to. 
+
+
+
+P- • 
+
+
+•ticipio activo. 
+
+
+t'at. 
+
+
+
+
+part. conip . . 
+
+
+. &lt;-ompar;.!ÍTa. 
+
+
+part. conjuiit. 
+
+
+
+
+parL insep. . . 
+
+
+
+
+per» ... 
+
+
+
+
+Pertp. . 
+
+
+
+
+Pf 
+
+
+participio de futuro. 
+
+
+Pint 
+
+
+Pintura. 
+
+
+Pl 
+
+
+plural 
+
+
+Poit 
+
+
+Poética. 
+
+
+Por antonom . 
+
+
+Por antonomada. 
+
+
+Por exc' 
+
+
+Por cxcrlenria. 
+
+
+Por ext 
+
+
+Por extensión. 
+
+
+port 
+
+
+
+
+PP 
+
+
+
+
+pr«P 
+
+
+
+
+prep. \m'-r\. 
+
+
+jjlc. 
+
+
+pres . . . 
+
+
+
+
+pret 
+
+
+
+
+priv. » privaf . 
+
+
+privativo privativa. 
+
+
+
+
+pronombre. 
+
+
+pron. dem.. . . 
+
+
+pronombre demostrativo. 
+
+
+pron. pers. . . 
+
+
+pronombre personal. 
+
+
+
+
+pronombre posesivo, 
+pronombre relativo. 
+
+
+pron. relat . . 
+
+
+Pros 
+
+
+Prosodia. 
+
+
+prov 
+
+
+provenxal. 
+
+
+p. US... . . ■ 
+
+
+poro usado o usada. 
+
+
+Quitn.. 
+
+
+Química. 
+
+
+r 
+
+
+verbo reflexivo. 
+
+
+rec 
+
+
+verbo reríproco. 
+
+
+ref.,ref.v 
+
+
+refrán, refranes. 
+
+
+reg 
+
+
+regular. 
+
+
+RO, 
+
+
+Retórica. 
+
+
+s 
+
+
+substantivo. 
+
+
+Sal.... 
+
+
+Salamanca. 
+
+
+Sant... . . 
+
+
+Santande'. 
+
+
+Seg 
+
+
+Sfgofia. 
+
+
+sent ... 
+
+
+sentido. 
+
+
+separat . 
+
+
+separativo o separativa. 
+
+
+Sev 
+
+
+S.viila. 
+
+
+
+
+singular. 
+Soria. 
+
+
+Sor 
+
+
+subj 
+
+
+,-: ■■■ Mvo. 
+
+
+sup. . . . 
+
+
+vo. 
+
+
+t 
+
+
+. tiempo. 
+
+
+Tatirom 
+
+
+Tairnnofnia. 
+
+
+Tttt... 
+
+
+. Teologít. 
+
+
+Ttr... 
+
+
+Ten.-/. 
+
+
+teutón ■ 
+
+
+-n. 
+
+
+tf. 
+
+
+:• icii'in femenina. 
+
+
+7%mt... 
+
+
+Jmtmrt*. 
+
+
+TtL 
+
+
+Toledo. 
+
+
+T»P&gt;tr 
+
+
+To^gr^fia. 
+
+
+Trig. Trigi". 
+
+
+Trigonometría. 
+
+
+Ú.#ó 
+
+
+Úsase. 
+
+
+Ú. m. c. r . . . . 
+
+
+Úsase mi* como teflexivo. 
+
+
+Ü. m. c. 5 
+
+
+Úsase máf como iulwiintiva 
+
+
+Usib.#usib. 
+
+
+Usibaie. 
+
+
+Ú.tca 
+
+
+Unte tunbién como actiro. 
+
+
+Ú. t. c «ilj . . 
+
+
+Úsase también como adjctÍTO. 
+
+
+Ú.tcn 
+
+
+ÚsMc también como neutro. 
+
+
+Ü.tci 
+
+
+Úsase también como reflenro. 
+
+
+Ú.tc&gt; 
+
+
+Úsate también ooao nbttxntivok 
+
+
+V 
+
+
+Véate. 
+
+
+VMC.... 
+
+
+wcucocc* 
+
+
+Vmn. . 
+
+
+Knswwrft 
+
+
+Vttfr. . 
+
+
+yeterimria. 
+
+
+»:. 
+
+
+tlumfm. 
+
+
+TOca;. . 
+
+
+
+
+»W.... 
+
+
+fUtOrta. 
+
+
+Ztm... 
+
+
+Zúwur*. 
+
+
+Zar.... 
+
+
+Zarmgom, 
+
+
+Ih4... 
