@@ -79,7 +79,7 @@ public class PruebaProlog {
                     paragraph.remove(0);
                     definition = paragraph.toString();
                     writer.append("means(" + word.substring(0, word.length()-1) + 
-                                        ", " + definition + ").");
+                                        ", " + definition + ").\n");
                     wr.write("means(" + word.substring(0, word.length()-1) + 
                                         ", " + definition + ").");
                     System.out.println("means(" + word.substring(0, word.length()-1) + 
