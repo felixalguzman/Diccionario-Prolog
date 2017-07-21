@@ -48,6 +48,8 @@ public class PruebaProlog {
             for (int i = 0; i < lista.length; i++) {
                 items.add(lista[i].toString());
             }
+            
+            // Imprimir solucion
                    
            
            
