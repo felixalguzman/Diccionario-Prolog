@@ -24,8 +24,14 @@ public class PruebaProlog {
 
     public static void main(String[] args) {
         
-        txtToPl("Resources/DiccionarioParcial.txt", "Resources/DiccionarioParcial.pl");
+        txtToPl("Resources/DiccionarioParcial.txt", "Resources/DiccionarioParcial2.pl");
         
+        DictionaryWindow d = new DictionaryWindow();
+        d.setVisible(true);
+        
+        
+ 
+//        
 //        ArrayList<String> items = new ArrayList();
 //         
 //        try {
@@ -49,12 +55,12 @@ public class PruebaProlog {
 //                   
 //            for (String item : items) {
 //                
-//                System.out.println("Solucion: " + item);
+//             //   System.out.println("Solucion: " + item);
 //            }
 //        
 //        } catch (Exception e) {
 //        }
-       
+//       
         
     }
     
@@ -66,29 +72,32 @@ public class PruebaProlog {
             
             BufferedWriter wr = new BufferedWriter(new FileWriter(plFile));
             String line = ""; 
+            
             String word = ""; String definition = "";
             ArrayList<String> paragraph = new ArrayList<String>() {};
-            
+            String hechos = "";
             while ((line = br.readLine()) != null) {
                 
                 if(!line.equals(""))
-                    paragraph.add(line);
+                {
+                    
+                    paragraph.add(line.replace("\'", ""));   
+                }
                 else{
                     
-                    word = paragraph.get(0).split(" ")[0];
+                    word = paragraph.get(0).split(" ")[0].toLowerCase();
                     paragraph.remove(0);
                     definition = paragraph.toString();
-                    writer.append("means(" + word.substring(0, word.length()-1) + 
-                                        ", " + definition + ").\n");
-                    wr.write("means(" + word.substring(0, word.length()-1) + 
-                                        ", " + definition + ").");
+                    hechos += "means(" + word.substring(0, word.length()-1) + 
+                                        ", '" + definition + "').\n";
+                  
                     System.out.println("means(" + word.substring(0, word.length()-1) + 
                                         ", " + definition + ").");
                     
                     paragraph.clear();
                 }
             }
-            writer.println();
+            writer.println(hechos);
             writer.close();
         } 
         catch (IOException ex) {
