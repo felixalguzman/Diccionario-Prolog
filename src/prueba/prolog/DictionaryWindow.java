@@ -2,8 +2,11 @@ package prueba.prolog;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Hashtable;
 import java.util.Map;
+import org.jpl7.Atom;
+import org.jpl7.Compound;
 import org.jpl7.Query;
 import org.jpl7.Term;
 import org.jpl7.Util;
@@ -21,11 +24,14 @@ import org.jpl7.Variable;
  */
 public class DictionaryWindow extends javax.swing.JFrame {
 
+    private String sinonimos = "";
     /**
      * Creates new form DictionaryWindow
      */
     public DictionaryWindow() {
         initComponents();
+        
+        
     }
 
     /**
@@ -65,7 +71,7 @@ public class DictionaryWindow extends javax.swing.JFrame {
 
         jLabel1.setText("Opciones:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Definicion", "Sinonimos", "Antonimos" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sinonimos", "Antonimos" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,19 +79,21 @@ public class DictionaryWindow extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton1)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(47, 47, 47)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtField, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 306, Short.MAX_VALUE))
+                            .addComponent(txtField)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,7 +107,7 @@ public class DictionaryWindow extends javax.swing.JFrame {
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -113,12 +121,25 @@ public class DictionaryWindow extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String palabra = txtField.getText();
         jTextArea1.setText("");
+        sinonimos = "";
+        String[] sin = separarFrase(palabra);
         
         if(jComboBox1.getSelectedIndex() == 0)
         {
-             String re = buscarDefinicion(palabra);
-             jTextArea1.setText(re.toString());
+            for (String string : sin) {
+                buscarSinonimo(string);
+            }
+            
+            jTextArea1.setText(sinonimos);
         }
+       
+        
+        
+//        if(jComboBox1.getSelectedIndex() == 0)
+//        {
+//             String re = buscarDefinicion(palabra);
+//             jTextArea1.setText(re.toString());
+//        }
         
        
         
@@ -127,7 +148,66 @@ public class DictionaryWindow extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    
+    public void buscarSinonimo(String pal)
+    {
+        String q = "consult('PL/sinonimos.pl')";
+        Query q1 = new Query(q);
+        System.out.println("Consulta de archivo" + " " + (q1.hasSolution() ?"correcto":"incorrecto" ) );
+        String x1 = null;
+        x1= pal.toLowerCase();
+        String y = "_";
+        String sinonimo = "sacarsinonimo("+x1+",X).";
+        Query q2 = new Query(sinonimo);
+        if(q2.hasSolution())
+        {
+            // Map<String, Term>[] x = q2.allSolutions();
+             Term x = q2.oneSolution().get("X");
+            //ArrayList<String> lista = new ArrayList<String>();
 
+               sinonimos += x.toString() + " ";
+
+           // for (int i = 0; i < x.length; i++) {
+             //   lista.add(x[i].toString());
+              //   sinonimos +=x[i].toString() + " ";
+               // System.out.println("En pos de lista "+i+" respuesta: " +lista.get(i) );
+           // }
+        }
+        else
+        {
+            sinonimos += pal + " ";
+        }
+       
+       // System.out.println("Respuesta :" + Arrays.toString(lista.toArray()));
+       // return x1;
+    }
+    
+    public String[] separarFrase(String s) {
+        int cp = 0; // Cantidad de palabras
+         
+        // Recorremos en busca de espacios
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == ' ') { // Si es un espacio
+                cp++; // Aumentamos en uno la cantidad de palabras
+            }
+        }
+         
+        // "Este blog es genial" tiene 3 espacios y 3 + 1 palabras
+        String[] partes = new String[cp + 1];
+        for (int i = 0; i < partes.length; i++) {
+            partes[i] = ""; // Se inicializa en "" en lugar de null (defecto)
+        }
+         
+        int ind = 0; // Creamos un índice para las palabras
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == ' ') { // Si hay un espacio
+                ind++; // Pasamos a la siguiente palabra
+                continue; // Próximo i
+            }
+            partes[ind] += s.charAt(i); // Sino, agregamos el carácter a la palabra actual
+        }
+        return partes; // Devolvemos las partes
+    }
     
     public String buscarDefinicion(String pal)
     {
@@ -152,7 +232,7 @@ public class DictionaryWindow extends javax.swing.JFrame {
             //Term bound =((Hashtable) q2.nextElement());
             m = q2.allSolutions();
         
-      a = x.toString();
+             a = x.toString();
 //        for (int i=0;i<x.arity();i++) {
 //          resultado.add(x.toTermArray());
 //        }
