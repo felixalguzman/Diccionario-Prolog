@@ -27,7 +27,7 @@ import org.jpl7.Term;
  */
 public class DictionaryWindow extends javax.swing.JFrame {
 
-    private String sinonimos = "";
+    
     private String  palabra = "";
     /**
      * Creates new form DictionaryWindow
@@ -132,7 +132,7 @@ public class DictionaryWindow extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String palabra = txtField.getText();
         jTextPane1.setText("");
-        sinonimos = "";
+       
         String[] sin = separarFrase(palabra);
         String res = "";
         if(jComboBox1.getSelectedIndex() == 0)
@@ -150,13 +150,7 @@ public class DictionaryWindow extends javax.swing.JFrame {
         }
        
         
-        
-//        if(jComboBox1.getSelectedIndex() == 0)
-//        {
-//             String re = buscarDefinicion(palabra);
-//             jTextArea1.setText(re.toString());
-//        }
-        
+      
        
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -165,14 +159,15 @@ public class DictionaryWindow extends javax.swing.JFrame {
          
         if(!jTextPane1.getText().equalsIgnoreCase(""))
         {
-            try {
-            String wrd="";
-            int pt=jTextPane1.viewToModel(evt.getPoint());
-            int spt=Utilities.getWordStart(jTextPane1,pt);
-            int ept=Utilities.getWordEnd(jTextPane1,pt);
-            jTextPane1.setSelectionStart(spt);
-            jTextPane1.setSelectionEnd(ept);
-            wrd=jTextPane1.getSelectedText();
+            try 
+            {
+                String wrd="";
+                int pt=jTextPane1.viewToModel(evt.getPoint());
+                int spt=Utilities.getWordStart(jTextPane1,pt);
+                int ept=Utilities.getWordEnd(jTextPane1,pt);
+                jTextPane1.setSelectionStart(spt);
+                jTextPane1.setSelectionEnd(ept);
+                wrd=jTextPane1.getSelectedText();
           
             if(jComboBox1.getSelectedIndex()==0 && !wrd.isEmpty())
             {
@@ -214,7 +209,7 @@ public class DictionaryWindow extends javax.swing.JFrame {
         
         x1= pal.toLowerCase();
         x1 = x1.replace("'", "");
-        System.out.println("Palabra sin '' : " + x1);
+        //System.out.println("Palabra sin '' : " + x1);
         String y = "_";
         String sinonimo = "sacarsinonimo("+x1+",X).";
          Query q2 = null;
@@ -232,11 +227,11 @@ public class DictionaryWindow extends javax.swing.JFrame {
         {
       
             x = q2.oneSolution().get("X");
-            sinonimos += x.toString() + " ";
+           
         }
         else
         {
-          sinonimos += pal + " ";
+          
           x = new org.jpl7.Integer(1);
         }
        
