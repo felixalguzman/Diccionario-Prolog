@@ -7,27 +7,21 @@ package prueba.prolog;
 
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.jpl7.Query;
-import org.jpl7.Util;
-import org.jpl7.fli.atom_t;
 
 public class PruebaProlog {
 
     public static void main(String[] args) {
         
-       txtToPl("Resources/Out/sinonimos.pl");   
+       //txtToPl("Resources/Out/sinonimos.pl");   
         
         DictionaryWindow d = new DictionaryWindow();
         d.setTitle("Diccionario de Sinonimos y Antonimos");
@@ -178,7 +172,18 @@ public class PruebaProlog {
                             new FileInputStream(paths[23]), "UTF-8")),
             };
             PrintWriter writer = new PrintWriter(plFile);
+            BufferedReader in = new BufferedReader(new FileReader("Resources/data/Logica.pl"));
             
+            String otro = "\n";
+            String log;
+            while((log = in.readLine()) != null)
+            {
+               
+                otro += log.toString() + "\n";
+                
+            }
+           
+             in.close();
             String line = ""; String word; 
             String linev2[];
             int sinLines = 0;
@@ -245,7 +250,7 @@ public class PruebaProlog {
                             if(i == w.synonyms.length-1)
                             {
                                
-                                  System.out.println("entro valor de i: " + i + " valor del lenght: " + w.synonyms.length + " posicion de , : " );
+                                 // System.out.println("entro valor de i: " + i + " valor del lenght: " + w.synonyms.length + " posicion de , : " );
                             }
                         }
                        // writer.write("], \'" + w.wordType + "\').\n");
@@ -254,7 +259,12 @@ public class PruebaProlog {
                         writer.write(removerCaracter(pal));
             }
             
+             writer.flush();
+           // writer.write(otro);
+           
+            
             writer.close();
+           
             br.close();
         } 
         catch (IOException ex) {
@@ -267,16 +277,30 @@ public class PruebaProlog {
         String res = "";
         int pos = 0;
         res = new StringBuilder(cad).reverse().toString();
-        System.out.println("cadena : " + res);
+       // System.out.println("cadena : " + res);
         pos = 0;
         StringBuilder b = new StringBuilder(res);
         int first = res.indexOf(",");
         int second = res.indexOf(",", first + 1);
-        System.out.println("Valor de pos: " + second);
+       // System.out.println("Valor de pos: " + second);
         b.deleteCharAt(second);
         res = new StringBuilder(b.toString()).reverse().toString();
         
         return res;
+    }
+    
+   
+    
+    public void guardarResultados(String ruta, String datos) throws FileNotFoundException
+    {
+        try
+        {
+            PrintWriter writer = new PrintWriter(ruta, "UTF-8");
+            writer.println(datos);
+            writer.close();
+        } catch (IOException e) {
+            System.out.println(e);
+        }
     }
     
 }

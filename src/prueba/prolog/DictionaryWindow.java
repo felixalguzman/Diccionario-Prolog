@@ -1,16 +1,19 @@
 package prueba.prolog;
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Hashtable;
+import java.io.IOException;
 import java.util.Map;
-import org.jpl7.Atom;
-import org.jpl7.Compound;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.Element;
+import javax.swing.text.StyledDocument;
+import javax.swing.text.Utilities;
+import static javax.swing.text.Utilities.getWordEnd;
+import static javax.swing.text.Utilities.getWordStart;
 import org.jpl7.Query;
 import org.jpl7.Term;
-import org.jpl7.Util;
-import org.jpl7.Variable;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -25,6 +28,7 @@ import org.jpl7.Variable;
 public class DictionaryWindow extends javax.swing.JFrame {
 
     private String sinonimos = "";
+    private String  palabra = "";
     /**
      * Creates new form DictionaryWindow
      */
@@ -45,10 +49,10 @@ public class DictionaryWindow extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         txtField = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,13 +69,16 @@ public class DictionaryWindow extends javax.swing.JFrame {
             }
         });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
         jLabel1.setText("Opciones:");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sinonimos", "Antonimos" }));
+
+        jTextPane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextPane1MouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(jTextPane1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -92,7 +99,7 @@ public class DictionaryWindow extends javax.swing.JFrame {
                             .addComponent(txtField)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane1)))
+                        .addComponent(jScrollPane2)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -107,7 +114,7 @@ public class DictionaryWindow extends javax.swing.JFrame {
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -115,22 +122,31 @@ public class DictionaryWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldActionPerformed
-        // TODO add your handling code here:
+       
+      
+        /* Here after getting the word from jTextPane we print the definition
+        of that word in jTextArea... I got the code for this part */
+        
     }//GEN-LAST:event_txtFieldActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String palabra = txtField.getText();
-        jTextArea1.setText("");
+        jTextPane1.setText("");
         sinonimos = "";
         String[] sin = separarFrase(palabra);
-        
+        String res = "";
         if(jComboBox1.getSelectedIndex() == 0)
         {
-            for (String string : sin) {
-                buscarSinonimo(string);
+            if(!palabra.equalsIgnoreCase(""))
+            {
+               for (String string : sin) {
+                res += buscarSinonimo(string) + " ";
+            }
+               
+           // res = res.replace("'", "");
+            jTextPane1.setText(res); 
             }
             
-            jTextArea1.setText(sinonimos);
         }
        
         
@@ -145,41 +161,95 @@ public class DictionaryWindow extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jTextPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextPane1MouseClicked
+         
+        if(!jTextPane1.getText().equalsIgnoreCase(""))
+        {
+            try {
+            String wrd="";
+            int pt=jTextPane1.viewToModel(evt.getPoint());
+            int spt=Utilities.getWordStart(jTextPane1,pt);
+            int ept=Utilities.getWordEnd(jTextPane1,pt);
+            jTextPane1.setSelectionStart(spt);
+            jTextPane1.setSelectionEnd(ept);
+            wrd=jTextPane1.getSelectedText();
+          
+            if(jComboBox1.getSelectedIndex()==0 && !wrd.isEmpty())
+            {
+               System.out.println("TextPane word="+wrd);
+                palabra = "";
+
+                String palabras = jTextPane1.getText();
+                String[] sep = separarFrase(palabras);
+                jTextPane1.setText("");
+                wrd = wrd.replaceAll("\\s+","");
+
+                palabra = palabras.replaceFirst(wrd, buscarSinonimo(wrd));
+    //          System.out.println("Sinonimo de: " + wrd + " es: " + buscarSinonimo(wrd) );
+    //          System.out.println(buscarSinonimo(wrd));
+
+                jTextPane1.setText(palabra);
+            }
+//            
+         
+            
+        } catch (BadLocationException ex) {
+            Logger.getLogger(DictionaryWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }
+        
+    }//GEN-LAST:event_jTextPane1MouseClicked
+
     /**
-     * @param args the command line arguments
+     * @param pal
+     * @return 
      */
     
-    public void buscarSinonimo(String pal)
+    public String buscarSinonimo(String pal)
     {
-        String q = "consult('PL/sinonimos.pl')";
+        String q = "consult('Resources/Out/sinonimos.pl').";
         Query q1 = new Query(q);
         System.out.println("Consulta de archivo" + " " + (q1.hasSolution() ?"correcto":"incorrecto" ) );
         String x1 = null;
+        
         x1= pal.toLowerCase();
+        x1 = x1.replace("'", "");
+        System.out.println("Palabra sin '' : " + x1);
         String y = "_";
         String sinonimo = "sacarsinonimo("+x1+",X).";
-        Query q2 = new Query(sinonimo);
-        if(q2.hasSolution())
+         Query q2 = null;
+        if(!pal.isEmpty())
         {
-            // Map<String, Term>[] x = q2.allSolutions();
-             Term x = q2.oneSolution().get("X");
-            //ArrayList<String> lista = new ArrayList<String>();
-
-               sinonimos += x.toString() + " ";
-
-           // for (int i = 0; i < x.length; i++) {
-             //   lista.add(x[i].toString());
-              //   sinonimos +=x[i].toString() + " ";
-               // System.out.println("En pos de lista "+i+" respuesta: " +lista.get(i) );
-           // }
+            q2 = new Query(sinonimo);
         }
         else
         {
-            sinonimos += pal + " ";
+            return pal;
+        }
+        
+        Term x = null ;
+        if(q2.hasSolution())
+        {
+      
+            x = q2.oneSolution().get("X");
+            sinonimos += x.toString() + " ";
+        }
+        else
+        {
+          sinonimos += pal + " ";
+          x = new org.jpl7.Integer(1);
         }
        
-       // System.out.println("Respuesta :" + Arrays.toString(lista.toArray()));
-       // return x1;
+    
+       if(!x.isInteger())
+       {
+           return x.toString();
+       }
+       else
+       {
+           return pal;
+       }
+               
     }
     
     public String[] separarFrase(String s) {
@@ -223,19 +293,14 @@ public class DictionaryWindow extends javax.swing.JFrame {
      
         //res = Util.atomListToStringArray(q2.oneSolution().get(res));
        Term x = q2.oneSolution().get("X");
-        
-      
-       
+                    
         Map<String, Term> m[];
-        
+            
        
-            //Term bound =((Hashtable) q2.nextElement());
-            m = q2.allSolutions();
+        m = q2.allSolutions();
         
-             a = x.toString();
-//        for (int i=0;i<x.arity();i++) {
-//          resultado.add(x.toTermArray());
-//        }
+        a = x.toString();
+
         
         return a;
     }
@@ -244,8 +309,8 @@ public class DictionaryWindow extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextPane jTextPane1;
     private static javax.swing.JTextField txtField;
     // End of variables declaration//GEN-END:variables
 }
