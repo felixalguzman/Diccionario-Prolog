@@ -29,13 +29,31 @@ public class DictionaryWindow extends javax.swing.JFrame {
 
     
     private String  palabra = "";
+    private boolean baseConsultada = false;
     /**
      * Creates new form DictionaryWindow
      */
     public DictionaryWindow() {
         initComponents();
-        
-        
+        consultarBase();
+    }
+
+    /**
+     * Consulta el archivo de hechos Prolog una sola vez. Reconsultarlo en cada
+     * busqueda recarga 2.5 MB de hechos innecesariamente.
+     */
+    private void consultarBase() {
+        if (baseConsultada) {
+            return;
+        }
+        try {
+            Query q = new Query("consult('Resources/Out/sinonimos.pl').");
+            baseConsultada = q.hasSolution();
+            System.out.println("Consulta de archivo "
+                    + (baseConsultada ? "correcto" : "incorrecto"));
+        } catch (Exception e) {
+            System.out.println("No se pudo consultar la base Prolog: " + e);
+        }
     }
 
     /**
@@ -202,11 +220,9 @@ public class DictionaryWindow extends javax.swing.JFrame {
     
     public String buscarSinonimo(String pal)
     {
-        String q = "consult('Resources/Out/sinonimos.pl').";
-        Query q1 = new Query(q);
-        System.out.println("Consulta de archivo" + " " + (q1.hasSolution() ?"correcto":"incorrecto" ) );
+        consultarBase();
         String x1 = null;
-        
+
         x1= pal.toLowerCase();
         x1 = x1.replace("'", "");
         //System.out.println("Palabra sin '' : " + x1);
